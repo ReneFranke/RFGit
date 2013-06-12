@@ -91,7 +91,14 @@ public class MyWebApp implements EntryPoint {
 			 * Fired when the user clicks on the sendButton.
 			 */
 			public void onClick(ClickEvent event) {
-				sendNameToServer();
+				if (!event.isShiftKeyDown())
+				{
+					sendNameToServer();
+				}
+				else
+				{
+					nameField.setText("");
+				}
 			}
 
 			/**
